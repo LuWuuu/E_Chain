@@ -19,7 +19,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    aboutwidget.cpp \
     adminwindow.cpp \
+    connectdabasewidget.cpp \
     data.cpp \
     dataquery.cpp \
     lesson.cpp \
@@ -34,7 +36,9 @@ SOURCES += \
     weblogwidget.cpp
 
 HEADERS += \
+    aboutwidget.h \
     adminwindow.h \
+    connectdabasewidget.h \
     data.h \
     dataquery.h \
     lesson.h \
@@ -48,7 +52,9 @@ HEADERS += \
     weblogwidget.h
 
 FORMS += \
+    aboutwidget.ui \
     adminwindow.ui \
+    connectdabasewidget.ui \
     loadclassfromwebwidget.ui \
     loginwidget.ui \
     mainwindow.ui \
@@ -66,3 +72,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     SIMS_res.qrc
+
+msvc {
+    QMAKE_CFLAGS += /utf-8
+    QMAKE_CXXFLAGS += /utf-8
+}
